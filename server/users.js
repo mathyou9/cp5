@@ -180,6 +180,17 @@ router.get('/', auth.verifyToken, User.verify, async (req, res) => {
   return res.send(req.user);
 });
 
+router.get('/all', async (req, res) => {
+  try {
+    let participants = await User.find();
+    return res.send(participants);
+  } catch (error) {
+    console.log(error);
+    return res.sendStatus(500);
+  }
+});
+
+
 module.exports = {
   model: User,
   routes: router,

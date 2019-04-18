@@ -6,11 +6,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    user: null
+    user: null,
+    participants: {}
   },
   mutations: {
     setUser(state, user) {
       state.user = user;
+    },
+    setParticipants(state, participants){
+      state.participants = participants;
     }
   },
   actions: {
@@ -45,6 +49,15 @@ export default new Vuex.Store({
       try {
         let response = await axios.get("/api/users");
         context.commit('setUser', response.data);
+        return "";
+      } catch (error) {
+        return "";
+      }
+    },
+    async getParticipants(context) {
+      try {
+        let response = await axios.get("/api/users/all");
+        context.commit('setParticipants', response.data);
         return "";
       } catch (error) {
         return "";
