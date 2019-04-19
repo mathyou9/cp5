@@ -56,7 +56,7 @@
       </div>
 
       <div class="pure-controls">
-        <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        <button type="submit" class="submit">Submit</button>
       </div>
     </fieldset>
   </form>
@@ -103,17 +103,24 @@ export default {
 
 <style scoped>
 form {
-  border: 1px solid #ccc;
-  background-color: #eee;
-  border-radius: 4px;
+  font-family: sans-serif;
+  background-color: #c7f65a;
+  border-radius: 7px;
   padding: 20px;
+  position: relative;
+  top: 20vh;
+  width: 30vw;
+  left: 33vw;
 }
 
-.pure-controls {
-  display: flex;
-}
-
-.pure-controls button {
-  margin-left: auto;
+.submit{
+  text-align: center;
+  background-color: white;
+  border-style: solid;
+  border-color: #c64d56;
+  border-radius: 7px;
+  padding: 10px;
+  margin: 10px;
+  width: 50%;
 }
 </style>

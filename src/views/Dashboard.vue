@@ -9,6 +9,21 @@
     </div>
 
     <div class="containerDash">
+      <div class="topDash">
+        <div class="totalP">
+          Total Number of Participants: {{participants.length}}
+        </div>
+        <router-link to="/register" class="addP" id="addParticipant">
+          <svg class="addSVG">
+            <circle class="circleClass"></circle>
+            <line x1="2.5vh" y1="1vh" x2="2.5vh" y2="4vh" class="lineClass"></line>
+            <line x1="1vh" y1="2.5vh" x2="4vh" y2="2.5vh" class="lineClass"></line>
+          </svg>
+          <div class="addPInside">
+            ADD PARTICIPANT
+          </div>
+        </router-link>
+      </div>
       <div class="namesP names">
         List Of Participants:
         <div class="searchP">
@@ -21,7 +36,7 @@
               Name:
             </div>
             <div class="borderContain">
-              <div class="contain" v-for="(participant) in participants" v-bind:key="participant">
+              <div class="contain" v-for="(participant) in participants">
                 {{participant.firstName}} {{participant.lastName}}
               </div>
             </div>
@@ -32,7 +47,7 @@
               Grade:
             </div>
             <div class="borderContain">
-              <div class="contain" v-for="(participant) in participants" v-bind:key="participant">
+              <div class="contain" v-for="(participant) in participants">
                 {{participant.grade}}
               </div>
             </div>
@@ -42,7 +57,7 @@
               Minutes Read:
             </div>
             <div class="borderContain">
-              <div class="contain" v-for="(participant) in participants" v-bind:key="participant">
+              <div class="contain" v-for="(participant) in participants">
                 {{participant.minutesRead}}
               </div>
             </div>
@@ -53,7 +68,7 @@
               Username:
             </div>
             <div class="borderContain">
-              <div class="contain" v-for="(participant) in participants" v-bind:key="participant">
+              <div class="contain" v-for="(participant) in participants">
                 {{participant.username}}
               </div>
             </div>
@@ -80,7 +95,7 @@
               Name:
             </div>
             <div class="borderContain">
-              <div class="contain" v-for="(participant) in participants" v-bind:key="participant">
+              <div class="contain" v-for="(participant) in participants">
                 {{participant.firstName}} {{participant.lastName}}
               </div>
             </div>
@@ -91,7 +106,7 @@
               Grade:
             </div>
             <div class="borderContain">
-              <div class="contain" v-for="(participant) in participants" v-bind:key="participant">
+              <div class="contain" v-for="(participant) in participants">
                 {{participant.grade}}
               </div>
             </div>
@@ -101,7 +116,7 @@
               Minutes Read:
             </div>
             <div class="borderContain">
-              <div class="contain" v-for="(participant) in participants" v-bind:key="participant">
+              <div class="contain" v-for="(participant) in participants">
                 {{participant.minutesRead}}
               </div>
             </div>
@@ -112,7 +127,7 @@
               Username:
             </div>
             <div class="borderContain">
-              <div class="contain" v-for="(participant) in participants" v-bind:key="participant">
+              <div class="contain" v-for="(participant) in participants">
                 {{participant.username}}
               </div>
             </div>
@@ -139,7 +154,7 @@
               Name:
             </div>
             <div class="borderContain">
-              <div class="contain" v-for="(participant) in participants" v-bind:key="participant">
+              <div class="contain" v-for="(participant) in participants">
                 {{participant.firstName}} {{participant.lastName}}
               </div>
             </div>
@@ -150,7 +165,7 @@
               Grade:
             </div>
             <div class="borderContain">
-              <div class="contain" v-for="(participant) in participants" v-bind:key="participant">
+              <div class="contain" v-for="(participant) in participants">
                 {{participant.grade}}
               </div>
             </div>
@@ -160,7 +175,7 @@
               Minutes Read:
             </div>
             <div class="borderContain">
-              <div class="contain" v-for="(participant) in participants" v-bind:key="participant">
+              <div class="contain" v-for="(participant) in participants">
                 {{participant.minutesRead}}
               </div>
             </div>
@@ -171,7 +186,7 @@
               Username:
             </div>
             <div class="borderContain">
-              <div class="contain" v-for="(participant) in participants" v-bind:key="participant">
+              <div class="contain" v-for="(participant) in participants">
                 {{participant.username}}
               </div>
             </div>
@@ -292,6 +307,11 @@ export default {
   stroke: #47cdc6;
   fill: #47cdc6;
 }
+.lineClass{
+  stroke: white;
+  stroke-width: 10px;
+  stroke-linecap: round;
+}
 .namesP{
   background-color: #47cdc6;
   left:0vw;
@@ -384,6 +404,7 @@ export default {
   display:inline-block;
   width: 8vw;
   vertical-align: top;
+  overflow: hidden;
 }
 .divider{
   display:inline-block;
@@ -412,5 +433,9 @@ export default {
   height: 55vh;
   border-style: dotted;
   border-color: rgba(51,51,51,1);
+}
+.contain {
+  height: 60px;
+  overflow: hidden;
 }
 </style>
